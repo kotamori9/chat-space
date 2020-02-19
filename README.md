@@ -4,43 +4,47 @@
 |------|----|-------|
 |name|string|null: false, foreign_key: true|
 |email|string|null: false, foreign_key: true|
-|password|integer|null: false, foreign_key: true|
-|post_id|integer|null: false, foreign_key: true|
+|password|integer|null: false|
 
 ### Association
-has_many :group,through: :groups_users
-has_many :group_users
+has_many :groups,through: :groups_users
+has_many :groups_users
+has_many :posts
 
 
 ## groups_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|reference|foreign_key: true|
+|group_id|reference|foreign_key: true|
 
 ### Association
-- belongs_to :users
-- belongs_to :group
+- belong_to :user
+- belong_to :group
 
 
 ## groupテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, foreign_key: true|
+|name|string|null: false, foreign_key: true|
 
 ### Association
 has_many :users,through: :groups_users
-has_many :group_users
+has_many :groups_users
+has_many :posts
 
 
 ## postテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|text|string|null: false, foreign_key: true|
-|image|string|null: false, foreign_key: true|
+|text|string||
+|image|string||
+|user_id|reference|foreign_key: true|
+|group_id|reference|foreign_key: true|
 
 ### Association
-belongs_to :users
+belong_to :user
+belong_to :group
