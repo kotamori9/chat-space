@@ -7,6 +7,10 @@
 |password|integer|null: false, foreign_key: true|
 |post_id|integer|null: false, foreign_key: true|
 
+### Association
+has_many :group,through: :groups_users
+has_many :group_users
+
 
 ## groups_usersテーブル
 
@@ -16,8 +20,8 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
+- belongs_to :users
 - belongs_to :group
-- belongs_to :user
 
 
 ## groupテーブル
@@ -25,6 +29,10 @@
 |Column|Type|Options|
 |------|----|-------|
 |group_name|string|null: false, foreign_key: true|
+
+### Association
+has_many :users,through: :groups_users
+has_many :group_users
 
 
 ## postテーブル
@@ -34,3 +42,5 @@
 |text|string|null: false, foreign_key: true|
 |image|string|null: false, foreign_key: true|
 
+### Association
+belongs_to :users
