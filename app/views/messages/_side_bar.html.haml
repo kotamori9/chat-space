@@ -2,12 +2,12 @@
   .side-bar__user-name
     .side-bar__user-name__box
       .side-bar__user-name__box--namebox
-        name
+        = current_user.name
       .side-bar__user-name__box--iconbox
         = link_to "#" do
           = icon('far','edit', class: "side-bar__user-name__box--iconbox__edit--btn")
-        = link_to "#" do
-          = icon('fas','cog', class: "side-bar__user-name__box--iconbox__cog--btn")
+        = link_to edit_user_path(current_user) do
+          = icon('fas', 'cog', class: ' side-bar__user-name__box--iconbox__cog--btn')
   
 
   .side-bar__group--list
@@ -16,4 +16,3 @@
         techcamp
       .side-bar__group--list__box__message
         まだです
-        
