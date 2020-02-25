@@ -20,10 +20,10 @@
   .chat-main__message-form
     .chat-main__message-form__form
       .chat-main__message-form__form__input-box
-        %input{type: "text", class: "text", placeholder: "type a message"}
-        %label{class: "image"}
-          = icon('fas', 'image')
-          %input{type: "file",class: "image__file"}
-      .chat-main__message-form__form__submit-btn
-        = link_to "#" do
-          Send
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'text', placeholder: 'type a message'
+          = f.label :image, class: "image" do
+            = icon('fas', 'image')
+            = f.file_field :image, class: 'image__file'
+          = f.submit 'Send', class: 'form__submit-btn'
+
