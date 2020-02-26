@@ -125,39 +125,48 @@
     }
   }
 
-  &__message-list{
+  .hako{
     height: calc(100vh - 190px);
     width: calc(100vw - 300px);
-    background-color: #fafafa;
 
-    &__box{
-      height:123px;
+    .message{
+      height: 90px;
       width: 100%;
-      margin-left: 40px;
-      &__data{
-        padding-top: 35px;
-        margin-bottom: 12px;
-        display: flex;
+      
+      &__message-list{
+        height:65px;
+        padding-left: 40px;
 
-        &__name{
-          font-size: 16px;
-          line-height: 16px;
-          height: 16px;
+        &__box{
+          height:123px;
+          width: 100%;
+          margin-left: 40px;
+          &__data{
+            padding-top: 35px;
+            margin-bottom: 12px;
+            display: flex;
+
+            &__name{
+              font-size: 16px;
+              line-height: 16px;
+              height: 16px;
+            }
+
+            &__day{
+              height: 12px;
+              font-size: 12px;
+              line-height: 12px;
+              margin-left: 5px;
+              color: gray;
+            }
+          }
+
+          &__text{
+            line-height: 14px;
+            font-size: 14px;
+            margin-bottom: 46px;
+          }
         }
-
-        &__day{
-          height: 12px;
-          font-size: 12px;
-          line-height: 12px;
-          margin-left: 5px;
-          color: gray;
-        }
-      }
-
-      &__text{
-        line-height: 14px;
-        font-size: 14px;
-        margin-bottom: 46px;
       }
     }
   }
@@ -203,7 +212,7 @@
         .image{
           position: absolute;
           top:15px;
-          right:110px;
+          right:100px;
           display: flex;
 
           i{
