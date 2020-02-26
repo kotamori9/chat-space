@@ -7,7 +7,7 @@
         Member:
         - @group.users.each do |member|
           = member.name
-    = link_to "http://localhost:3000/users/1/edit", class: "chat-main__group-info__btn" do
+    = link_to edit_group_path(@group), class: "chat-main__group-info__btn" do
       Edit
   .hako
     = render @messages
