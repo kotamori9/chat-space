@@ -3,61 +3,61 @@ $(function(){
   var buildHTML = function buildHTML(message){
     if (message.content && message.image ) {
       var html =
-       `<div class="message" data-message-id=` + message.id + `>` +
-          `<div class="message__message-list">` +
-            `<div class="message__message-list__box__data">` +
-              `<div class="message__message-list__box__data__name">` +
-                message.user_name +
-              `</div>` +
-              `<div class="message__message-list__box__data__day">` +
-                message.created_at +
-              `</div>` +
-            `</div>` +
-            `<div class="message__message-list__box__text">` +
-              `<p class="message__message-list__box__text__content">` +
-                message.content +
-              `</p>` +
-            `</div>` +
-              `<img src="` + message.image + `" class="lower-message__image">` +
-          `</div>` +
-        `</div>`
+       `<div class="message" data-message-id= ${message.id} >
+          <div class="message__message-list">
+            <div class="message__message-list__box__data">
+              <div class="message__message-list__box__data__name">
+                ${message.user_name} 
+              </div>
+              <div class="message__message-list__box__data__day">
+                ${message.created_at}
+              </div>
+            </div>
+            <div class="message__message-list__box__text">
+              <p class="message__message-list__box__text__content">
+                ${message.content}
+              </p>
+            </div>
+              <img src=" ${message.image} " class="lower-message__image">
+          </div>
+        </div>`
 
     } else if (message.content) {
       var html = 
-        `<div class="message" data-message-id=` + message.id + `>` +
-          `<div class="message__message-list">` +
-            `<div class="message__message-list__box__data">` +
-              `<div class="message__message-list__box__data__name">` +
-                message.user_name +
-              `</div>` +
-            `<div class="message__message-list__box__data__day">` +
-              message.created_at +
-            `</div>` +
-            `</div>` +
-            `<div class="message__message-list__box__text">` +
-              `<p class="message__message-list__box__text__content">` +
-                message.content +
-              `</p>` +
-            `</div>` +
-          `</div>` +
-      `</div>`
+        `<div class="message" data-message-id= ${message.id} >
+          <div class="message__message-list">
+            <div class="message__message-list__box__data">
+              <div class="message__message-list__box__data__name">
+                ${message.user_name}
+              </div>
+            <div class="message__message-list__box__data__day">
+              ${message.created_at} 
+            </div>
+            </div>
+            <div class="message__message-list__box__text">
+              <p class="message__message-list__box__text__content">
+                ${message.content}
+              </p>
+            </div>
+          </div>
+      </div>`
 
     } else if (message.image) {
       var html =
-        `<div class="message" data-message-id=` + message.id + `>` +
-          `<div class="message__message-list">` +
-            `<div class="message__message-list__box__data">` +
-              `<div class="message__message-list__box__data__name">` +
-                message.user_name +
-              `</div>` +
-            `<div class="message__message-list__box__data__day">` +
-              message.created_at +
-            `</div>` +
-            `</div>` +
-          `<div class="lower-message">` +
-            `<img src="` + message.image + `" class="lower-message__image" >` +
-          `</div>` +
-        `</div>`
+        `<div class="message" data-message-id= ${message.id} >
+          <div class="message__message-list">
+            <div class="message__message-list__box__data">
+              <div class="message__message-list__box__data__name">
+                ${message.user_name}
+              </div>
+            <div class="message__message-list__box__data__day">
+              ${message.created_at}
+            </div>
+            </div>
+          <div class="lower-message">
+            <img src=" ${message.image} " class="lower-message__image" >
+          </div> 
+        </div>`
     };
     return html;
   };
